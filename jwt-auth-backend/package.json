@@ -6,17 +6,33 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/server.js",
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
+  "imports": {
+    "#config/*": "./src/config/*.js",
+    "#controllers/*": "./src/controllers/*.js",
+    "#services/*": "./src/services/*.js",
+    "#routes/*": "./src/routes/*.js",
+    "#models/*": "./src/models/*.js",
+    "#middlewares/*": "./src/middlewares/*.js",
+    "#validators/*": "./src/validators/*.js",
+    "#utils/*": "./src/utils/*.js"
+  },
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "dotenv": "^17.2.3",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "express-validator": "^7.3.1",
+    "mongoose": "^9.3.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.11"
+    "nodemon": "^3.1.11",
+    "prettier": "^3.8.1"
   }
 }
